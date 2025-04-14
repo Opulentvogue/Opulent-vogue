@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#64748b'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        .stat-card:hover { transform: translateY(-5px); }
+        .team-member:hover .overlay { opacity: 1; }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+<nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+            <!-- Left Side: Logo & Desktop Menu -->
+            <div class="flex items-center">
+                <a href="index.html" class="font-['Pacifico'] text-2xl text-primary">Opulet Vogue & Gems</a>
+
+                <!-- Desktop Menu (Hidden on Small Screens) -->
+                <div class="hidden md:flex items-center space-x-8 ml-10">
+                    <a href="index.html" class="text-gray-700 hover:text-primary">Home</a>
+                    <div class="relative group">
+                        <a href="#" class="text-gray-700 hover:text-primary">Products</a>
+                        <div class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="Shoes.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Shoes</a>
+                            <a href="Clothes.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Clothes</a>
+                            <a href="Jewerly.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Jewelry</a>
+                        </div>
+                    </div>
+                    <a href="About-Us-Page.html" class="text-gray-700 hover:text-primary">About</a>
+                    <a href="Contact-Us.html" class="text-gray-700 hover:text-primary">Contact</a>
+                </div>
+            </div>
+
+            <!-- Right Side: Search, Cart & Mobile Menu Button -->
+            <div class="flex items-center space-x-6">
+                <div class="relative hidden md:block">
+                    <input type="text" placeholder="Search products..."
+                           class="w-64 pl-10 pr-4 py-2 text-sm border rounded-button focus:outline-none focus:border-primary">
+                    <div class="absolute left-3 top-2.5 w-4 h-4 flex items-center justify-center">
+                        <i class="ri-search-line text-gray-400"></i>
+                    </div>
+                </div>
+                <div class="relative cursor-pointer">
+                    <i class="ri-shopping-cart-line text-xl"></i>
+                    <span class="absolute -top-2 -right-2 w-5 h-5 bg-primary text-white text-xs rounded-full flex items-center justify-center">3</span>
+                </div>
+
+                <!-- Mobile Menu Button (Hamburger) -->
+                <button id="mobile-menu-btn" class="md:hidden text-2xl">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu (Hidden by Default) -->
+    <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-4 p-4 bg-white shadow-md">
+        <a href="index.html" class="text-gray-700 hover:text-primary">Home</a>
+        <div class="flex flex-col space-y-2">
+            <a href="#" class="text-gray-700 hover:text-primary">Products</a>
+            <div class="pl-4 flex flex-col space-y-1">
+                <a href="Shoes.html" class="text-gray-600 hover:text-primary">Shoes</a>
+                <a href="Clothes.html" class="text-gray-600 hover:text-primary">Clothes</a>
+                <a href="Jewerly.html" class="text-gray-600 hover:text-primary">Jewelry</a>
+            </div>
+        </div>
+
+        <a href="About-Us-Page.html" class="text-gray-700 hover:text-primary">About</a>
+        <a href="Contact-Us.html" class="text-gray-700 hover:text-primary">Contact</a>
+    </div>
+</nav>
+
+<script>
+    // JavaScript to toggle the mobile menu
+    document.getElementById("mobile-menu-btn").addEventListener("click", function() {
+        document.getElementById("mobile-menu").classList.toggle("hidden");
+    });
+</script>
+
+<section class="pt-24 pb-16 relative overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <img src="https://public.readdy.ai/ai/img_res/4e805cb2a30208450970ef231ee3db33.jpg" class="w-full h-full object-cover object-top" alt="Hero Background">
+    </div>
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-3xl">
+            <h1 class="text-5xl font-bold text-gray-900 mb-6">Effortless Style for Every Moment.</h1>
+            <p class="text-xl text-gray-700 mb-8">From statement ensembles to everyday essentials, our collections are designed for life in motion. Whether you're dressing for success, a special night out, or relaxed elegance, our clothing moves with you—beautifully.</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">Our Collection</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="product-card rounded-lg overflow-hidden shadow-lg">
+                <img src="images/cothes2.jpg" class="w-full h-[300px] object-cover" alt="Product">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">V-Neck belted tiered dress</h3>
+                    <p class="text-gray-600 mb-4">Ugx 90,000 </p>
+                    <button class="w-full bg-primary text-white py-2 rounded-button hover:bg-opacity-90">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card rounded-lg overflow-hidden shadow-lg">
+                <img src="images/clothes3.jpg" class="w-full h-[300px] object-cover" alt="Product">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Men's Pants</h3>
+                    <p class="text-gray-600 mb-4">Ugx 110,000</p>
+                    <button class="w-full bg-primary text-white py-2 rounded-button hover:bg-opacity-90">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card rounded-lg overflow-hidden shadow-lg">
+                <img src="images/clothes4.jpg" class="w-full h-[300px] object-cover" alt="Product">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Tank Tops</h3>
+                    <p class="text-gray-600 mb-4">ugx 50,000</p>
+                    <button class="w-full bg-primary text-white py-2 rounded-button hover:bg-opacity-90">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card rounded-lg overflow-hidden shadow-lg">
+                <img src="images/clothes5.jpg" class="w-full h-[300px] object-cover" alt="Product">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Double Breasted blazer dress</h3>
+                    <p class="text-gray-600 mb-4">Ugx 200,000</p>
+                    <button class="w-full bg-primary text-white py-2 rounded-button hover:bg-opacity-90">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card rounded-lg overflow-hidden shadow-lg">
+                <img src="images/clothes6.jpg" class="w-full h-[300px] object-cover" alt="Product">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Jeans</h3>
+                    <p class="text-gray-600 mb-4">Ugx 70,000</p>
+                    <button class="w-full bg-primary text-white py-2 rounded-button hover:bg-opacity-90">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card rounded-lg overflow-hidden shadow-lg">
+                <img src="images/clothes7.jpg" class="w-full h-[300px] object-cover" alt="Product">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Khaki pants</h3>
+                    <p class="text-gray-600 mb-4">Ugx 130,000</p>
+                    <button class="w-full bg-primary text-white py-2 rounded-button hover:bg-opacity-90">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card rounded-lg overflow-hidden shadow-lg">
+                <img src="images/clothes8.jpg" class="w-full h-[300px] object-cover" alt="Product">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Single Breasted Blazer dress</h3>
+                    <p class="text-gray-600 mb-4">Ugx 180,000</p>
+                    <button class="w-full bg-primary text-white py-2 rounded-button hover:bg-opacity-90">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card rounded-lg overflow-hidden shadow-lg">
+                <img src="images/clothes9.jpg" class="w-full h-[300px] object-cover" alt="Product">
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-2">Pencil Skirt</h3>
+                    <p class="text-gray-600 mb-4">Ugx 250,000</p>
+                    <button class="w-full bg-primary text-white py-2 rounded-button hover:bg-opacity-90">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- More product cards... -->
+        </div>
+    </div>
+</section>
+
+
+
+<footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="font-['Pacifico'] text-2xl mb-4">Opulet Vogue & Gems</h3>
+                <p class="text-gray-400">Elevate your style with our premium collection of fashion and accessories.</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="Shoes.html" class="text-gray-400 hover:text-white">Shoes</a></li>
+                    <li><a href="Clothes.html" class="text-gray-400 hover:text-white">Clothes</a></li>
+                    <li><a href="Jewerly.html" class="text-gray-400 hover:text-white">Jewelry</a></li>
+                    <li><a href="About-Us-Page.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                    <li><a href="Contact-Us.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li class="flex items-center"><i class="ri-map-pin-line mr-2"></i>  Wandegeya</li>
+                    <li class="flex items-center"><i class="ri-phone-line mr-2"></i> 0774207134 / 0771043519</li>
+                    <li class="flex items-center"><i class="ri-mail-line mr-2"></i> Opulentvogue@gmail.com
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary">
+                        <i class="ri-facebook-fill"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary">
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary">
+                        <i class="ri-twitter-fill"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+            <p>&copy; Opulet Vogue & Gems. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
